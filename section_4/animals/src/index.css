@@ -1,0 +1,33 @@
+.add {
+  padding: 10px;
+  font-size: medium;
+  background-color:cadetblue;
+  font-weight: bold;
+  color: white;
+}
+
+.container {
+  text-align: center;
+}
+
+.container-animals {
+  border: 1px solid black;
+  display: flex;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.animal {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+}
