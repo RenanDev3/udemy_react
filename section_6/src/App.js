@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 
 import BookCreate from './components/BookCreate'
+import Colors from './components/Colors'
 
 function App() {
   const [books, setBooks] = useState([])
@@ -30,6 +31,7 @@ function App() {
     <div>
       <div>
         <BookCreate createBook={createBook}/>
+        <Colors />
       </div>
 
     </div>
