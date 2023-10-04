@@ -37,7 +37,7 @@ function Colors() {
 
     function updateColorByIndex(){
         setColors(colors.map((color) => {
-            if (color.id === indexList){return {id: color.id, color: textColor}}
+            if (color.id === indexList){return {...color, color: textColor}}
             return color
         }))
     }
