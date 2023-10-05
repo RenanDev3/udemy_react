@@ -1,6 +1,8 @@
 import React,{useState} from 'react'
 
 import BookCreate from './components/BookCreate'
+import BookList from './components/BookList'
+
 
 function App() {
   const [books, setBooks] = useState([])
@@ -11,27 +13,27 @@ function App() {
     setId(id + 1)
   }
 
-  function updateBook(id, bookData){
-    const listBookUpdated = books.map((book) => {
-      if (book.id === id){
-        return bookData
-      } else {
-        return book
+  function updateBook(idBook, newTitle){
+    setBooks(books.map((book) => {
+      if(book.id === idBook){
+        return {...book, title: newTitle}
       }
-    })
-    setBooks(listBookUpdated)
+      return book
+    }))
   }
 
-  function deleteBook(id){
-    setBooks(books.filter((book) => book.id !== id))
+  function deleteBook(idBook){
+    setBooks(books.filter((book) => book.id !== idBook))
   }
 
   return (
     <div>
       <div>
+        <BookList books={books} updateBook={updateBook} deleteBook={deleteBook}/>
+      </div>
+      <div>
         <BookCreate createBook={createBook}/>
       </div>
-
     </div>
   )
 }
