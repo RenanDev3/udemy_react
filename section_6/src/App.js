@@ -1,4 +1,6 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
+
+import axios from "axios"
 
 import BookCreate from './components/BookCreate'
 import BookList from './components/BookList'
@@ -6,25 +8,28 @@ import BookList from './components/BookList'
 
 function App() {
   const [books, setBooks] = useState([])
-  const [id, setId] = useState(1)
 
-  function createBook(newBook){
-    setBooks([...books, {id: id, title: newBook}])
-    setId(id + 1)
+  async function createBook(newBook){
+    await axios.post('http://localhost:3001/books', {title: newBook})
+    fetchBooks()
   }
 
-  function updateBook(idBook, newTitle){
-    setBooks(books.map((book) => {
-      if(book.id === idBook){
-        return {...book, title: newTitle}
-      }
-      return book
-    }))
+  async function fetchBooks(){
+    const response = await axios.get('http://localhost:3001/books')
+    setBooks(response.data)
   }
 
-  function deleteBook(idBook){
-    setBooks(books.filter((book) => book.id !== idBook))
+  async function updateBook(idBook, newTitle){
+    await axios.put(`http://localhost:3001/books/${idBook}`, {title: newTitle})
+    fetchBooks()
   }
+
+  async function deleteBook(idBook){
+    await axios.delete(`http://localhost:3001/books/${idBook}`)
+    fetchBooks()
+  }
+
+  useEffect(() => {fetchBooks()}, [])
 
   return (
     <div>
