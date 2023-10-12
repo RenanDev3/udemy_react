@@ -1,11 +1,11 @@
-import React, {useState, useContext} from 'react'
+import React, {useState} from 'react'
 
-import BooksContext from '../context/books'
+import useBooksContext from '../hooks/use-books-context'
 import EditIcon from "../assets/edit.svg"
 import DeleteIcon from "../assets/delete.svg"
 
 function BookCard({book}) {
-  const {updateBook, deleteBook} = useContext(BooksContext)
+  const {updateBook, deleteBook} = useBooksContext()
   const [editMode, setEditMode] = useState(false)
   const [editTitle, setEditTitle] = useState(book.title)
 
