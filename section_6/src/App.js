@@ -6,9 +6,12 @@ import BooksContext from './context/books'
 
 
 function App() {
-  const { fetchBooks } = useContext(BooksContext)
+  const { stableFetchBooks } = useContext(BooksContext)
 
-  useEffect(() => {fetchBooks()}, [])
+
+
+  useEffect(() => {stableFetchBooks()}, [stableFetchBooks])
+
 
   return (
     <div>
