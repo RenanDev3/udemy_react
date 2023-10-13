@@ -8,9 +8,22 @@ import BooksContext from './context/books'
 function App() {
   const { stableFetchBooks } = useContext(BooksContext)
 
-
-
   useEffect(() => {stableFetchBooks()}, [stableFetchBooks])
+
+  useEffect(() => {
+    function listener(){
+      console.log("I was clicked")
+    }
+
+    document.body.addEventListener('click', listener)
+
+    function cleanListeners() {
+      document.body.removeEventListener('click', listener)
+    }
+
+    return cleanListeners
+
+  })
 
 
   return (
