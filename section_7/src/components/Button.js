@@ -1,8 +1,10 @@
 import React from 'react'
 
-function Button() {
+function Button({
+  children,
+}) {
   return (
-    <Button>Button</Button>
+    <button className="m-2 px-3 py-1.5 border border-blue-600 bg-blue-500 w-28 text-white font-bold">{children}</button>
   )
 }
 
