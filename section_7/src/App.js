@@ -1,12 +1,29 @@
 import React from 'react'
 
-import ButtonPage from './pages/ButtonPage'
+import Accordion from './components/Accordion'
 
 
 function App(){
+    const items = [
+        {   
+            id: 0,
+            label: 'Label 1',
+            content: 'Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. Content 1. '
+        },
+        {   
+            id: 1,
+            label: 'Label 2',
+            content: 'Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. Content 2. '
+        },
+        {   
+            id: 2,
+            label: 'Label 3',
+            content: 'Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. Content 3. '
+        }
+    ]
     return (
         <div>
-            <ButtonPage />
+            <Accordion items={items}/>
         </div>
 )}
 
