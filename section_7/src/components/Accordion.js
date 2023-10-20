@@ -4,11 +4,24 @@ import {BiRightArrow, BiDownArrow} from 'react-icons/bi'
 function Accordion({items}) {
     const [expandIndex, setExpandIndex] = useState(1);
 
-    function handleClick(index){
-        if (index === expandIndex) {
-            setExpandIndex(-1)
-        } else {setExpandIndex(index)}
+    // this can create a bug because of the delay of React at upading states
+    // function handleClick(index){
+    //     if (index === expandIndex) {
+    //         setExpandIndex(-1)
+    //     } else {setExpandIndex(index)}
 
+    // }
+
+    // this is the fixed version that prevents this bug
+
+    const handleClick = (nextIndex) => {
+        setExpandIndex((currentExpandedIndex) => {
+            if (currentExpandedIndex === nextIndex){
+                return -1
+            } else {
+                return nextIndex
+            }
+        })
     }
 
     const renderedItems = items.map((item, index) => {
@@ -19,8 +32,8 @@ function Accordion({items}) {
         // }
 
         return (
-            <div key={item.id}>
-                <div className='flex w-96 justify-between p-3 bg-gray-50 border-b items-center cursor-pointer' onClick={() => handleClick(index)}>
+            <div className='w-96' key={item.id}>
+                <div className='flex justify-between p-3 bg-gray-50 border-b items-center cursor-pointer' onClick={() => handleClick(index)}>
                     {item.label}
                     {isExpanded ? <BiDownArrow />: <BiRightArrow />}
                 </div>
