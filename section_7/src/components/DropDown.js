@@ -6,7 +6,7 @@ function DropDown({options, value, onChange}) {
     const [isOpen, setIsOpen] = useState(false)
 
     const renderOptions = options.map((option) => {
-        return <p className="hover:bg-zinc-400" key={option.value} onClick={() => {handleColorSelection(option)}}>{option.label}</p>
+        return <div className="hover:bg-zinc-400 rounded cursor-pointer p-1" key={option.value} onClick={() => {handleColorSelection(option)}}>{option.label}</div>
     })
 
     function handleOpen(){
@@ -19,13 +19,13 @@ function DropDown({options, value, onChange}) {
     }
 
   return (
-    <div className='mt-6 ml-2 w-32 border border-slate-600'>
-        <div className="flex border-b border-slate-600 justify-between hover:cursor-pointer" onClick={handleOpen}>
+    <div className='relative w-48'>
+        <div className="flex justify-between items-center cursor-pointer border rounded p-3 shadow bg-white w-full" onClick={handleOpen}>
             {value?.label || "Select..."}
             <span className="my-auto"><BiDownArrow /></span>
         </div>
         <div>
-            {isOpen && renderOptions}
+            {isOpen && <div className='absolute top-full border rounded p-3 shadow bg-white w-full'>{renderOptions}</div>}
         </div>
     </div>
   )
