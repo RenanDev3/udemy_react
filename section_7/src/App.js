@@ -15,7 +15,8 @@ function App(){
     
     // value and change are convention names
     return (
-        <div>
+        <div className='flex'>
+            <DropDown options={options} value={color} onChange={setColor}/>
             <DropDown options={options} value={color} onChange={setColor}/> 
         </div>
 )}
