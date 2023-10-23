@@ -7,7 +7,8 @@ function SideBar() {
         {label: 'Home', path: '/', className:'mb-3'},
         {label: 'DropDown', path: '/dropdown', className:'mb-3'},
         {label: 'Accordion', path: '/accordion', className:'mb-3'},
-        {label: 'Button', path: '/button'},
+        {label: 'Button', path: '/button', className:'mb-3'},
+        {label: 'Modal', path: '/modal'}
     ]
   return (
     <div className='sticky top-0 overflow-y-scroll flex flex-col items-start'>
