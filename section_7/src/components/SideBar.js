@@ -10,7 +10,8 @@ function SideBar() {
         {label: 'Accordion', path: '/accordion', className:'mb-3'},
         {label: 'Button', path: '/button', className:'mb-3'},
         {label: 'Modal', path: '/modal', className:'mb-3'},
-        {label: 'Table', path: '/table', className:'mb-3'}
+        {label: 'Table', path: '/table', className:'mb-3'},
+        {label: 'Counter', path: '/counter', className:'mb-3'}
     ]
 
   return (

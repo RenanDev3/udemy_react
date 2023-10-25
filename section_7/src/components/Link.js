@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import useNavigation from '../hooks/use-navigation'
+import useNavigation from '../hooks/useNavigation'
 
 
 function Link({to, children, className, activeClassName}) {
