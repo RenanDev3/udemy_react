@@ -21,7 +21,7 @@ function App(){
                 <Route path='/dropdown'> <DropDownPage /> </Route>
                 <Route path='/modal'><ModalPage /></Route>
                 <Route path='/table'><TablePage /></Route>
-                <Route path='/counter'><CounterPage /></Route>
+                <Route path='/counter'><CounterPage initialCount={0}/></Route>
             </div>
         </div>
 )}
