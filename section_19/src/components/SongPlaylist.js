@@ -33,7 +33,7 @@ function SongPlaylist() {
       <h3 className="subtitle is-3">Song Playlist</h3>
       <div className="buttons">
         <button
-          onClick={() => handleSongAdd(createRandomSong())}
+          onClick={() => handleAddSong(createRandomSong())}
           className="button is-link"
         >
           + Add Song to Playlist
