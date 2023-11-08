@@ -9,7 +9,16 @@ const addUser = createAsyncThunk('users/add', async () =>{
 
     const response = await axios.post("http://localhost:3005/users", userToAdd)
 
+    await pause(1000)
+
     return response.data
 })
+
+// DEV ONLY (debuging purposes)
+function pause(duration) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, duration)
+    })
+}
 
 export { addUser }
